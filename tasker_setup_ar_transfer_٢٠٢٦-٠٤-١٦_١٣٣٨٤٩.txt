@@ -1,0 +1,26 @@
+إعداد Tasker:
+
+1) Profile جديد:
+   Event -> UI -> Notification
+   Owner Application: WhatsApp
+
+2) Task جديد -> Net -> HTTP Request
+   Method: POST
+   URL: https://YOUR-SERVICE.onrender.com/whatsapp
+   Headers:
+   Content-Type: application/json
+   x-webhook-secret: YOUR_SECRET
+
+   Body:
+   {
+     "app": "WhatsApp",
+     "title": "%evtprm2",
+     "text": "%evtprm3"
+   }
+
+3) احفظ وفعّل البروفايل.
+
+ملاحظات:
+- %evtprm2 غالباً اسم المرسل
+- %evtprm3 غالباً نص الرسالة
+- إذا ظهر محتوى مختلف في جهازك، جرّب عمل Flash أو Write File لهذه المتغيرات لاختبارها.
